@@ -171,22 +171,6 @@ export function HeroSection({
                 <p className="hero-subtitle">{subtitle}</p>
               </RevealWrapper>
             )}
-
-            {/* CTA Button */}
-            <RevealWrapper
-              direction="up"
-              delay={1.0}
-              duration={theme.animation.duration.normal}
-            >
-              <div className="hero-cta">
-                <a href="#contact" className="hero-button">
-                  Get in Touch
-                </a>
-                <a href="#experience" className="hero-button hero-button-secondary">
-                  View My Work
-                </a>
-              </div>
-            </RevealWrapper>
           </div>
         </div>
       </div>
