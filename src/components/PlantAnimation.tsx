@@ -20,9 +20,6 @@ export function PlantAnimation() {
   useEffect(() => {
     if (!containerRef.current || isReducedMotion) return;
 
-    const container = containerRef.current;
-    const scrollTriggers: ScrollTrigger[] = [];
-
     // Always animate on first load (plant is in hero section)
     // Animate stem growing
     const stemAnimation = gsap.fromTo('.plant-stem',
