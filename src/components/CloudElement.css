@@ -1,0 +1,42 @@
+/**
+ * CloudElement Styles
+ * 
+ * Styles for decorative cloud elements with mint green color scheme.
+ * 
+ * Requirements: 5.1, 5.5
+ */
+
+.cloud-element {
+  position: absolute;
+  pointer-events: none;
+  color: var(--color-primary);
+  will-change: transform, opacity;
+  transition: transform 0.3s ease-out;
+  z-index: 1;
+}
+
+.cloud-element-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 8px 16px rgba(152, 255, 152, 0.4));
+}
+
+/* Size variants */
+.cloud-element--small {
+  filter: none;
+}
+
+.cloud-element--medium {
+  filter: none;
+}
+
+.cloud-element--large {
+  filter: none;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .cloud-element {
+    transition: none;
+  }
+}

@@ -1,0 +1,248 @@
+/**
+ * TimelineItem Styles
+ * 
+ * Styles for timeline entries with mint green (#98FF98) accent line and markers.
+ * Uses paperish white (#FFFEF2) background color scheme.
+ * 
+ * Requirements: 7.1, 7.2, 7.4, 8.1, 8.2, 8.4
+ */
+
+/* ============================================
+   Timeline Item Container
+   ============================================ */
+
+.timeline-item {
+  display: flex;
+  gap: var(--spacing-lg);
+  position: relative;
+  padding-bottom: var(--spacing-xl);
+}
+
+/* Vertical accent line connecting items */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 32px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    var(--color-primary) 0%,
+    var(--color-primary-dark) 100%
+  );
+  opacity: 0.6;
+}
+
+/* Remove line from last item */
+.timeline-item:last-child::before {
+  display: none;
+}
+
+/* ============================================
+   Timeline Marker
+   ============================================ */
+
+.timeline-marker {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-background);
+  border: 3px solid var(--color-primary);
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  box-shadow: 
+    0 0 0 4px var(--color-background),
+    var(--shadow-sm);
+  transition: all var(--duration-fast) ease;
+}
+
+.timeline-marker:hover {
+  transform: scale(1.1);
+  border-color: var(--color-primary-dark);
+  box-shadow: 
+    0 0 0 4px var(--color-background),
+    0 0 15px rgba(152, 255, 152, 0.4);
+}
+
+.timeline-marker-dot {
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-accent) 100%
+  );
+  border-radius: 50%;
+}
+
+.timeline-marker-icon {
+  font-size: var(--font-size-body);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================
+   Timeline Content
+   ============================================ */
+
+.timeline-content {
+  flex: 1;
+  padding-top: var(--spacing-xs);
+}
+
+/* Date badge */
+.timeline-date {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-light) 100%
+  );
+  color: var(--color-text);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--spacing-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Title */
+.timeline-title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-xs) 0;
+  line-height: var(--line-height-tight);
+}
+
+/* Organization */
+.timeline-organization {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-accent);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+/* Description */
+.timeline-description {
+  font-size: var(--font-size-body);
+  color: var(--color-text-light);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+/* ============================================
+   Highlights List
+   ============================================ */
+
+.timeline-highlights {
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-md) 0 0 0;
+}
+
+.timeline-highlight-item {
+  position: relative;
+  padding-left: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-small);
+  color: var(--color-text-light);
+  line-height: var(--line-height-normal);
+}
+
+.timeline-highlight-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  background: var(--color-primary);
+  border-radius: 50%;
+}
+
+.timeline-highlight-item:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   Responsive Styles
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .timeline-item {
+    gap: var(--spacing-md);
+  }
+
+  .timeline-marker {
+    width: 28px;
+    height: 28px;
+  }
+
+  .timeline-item::before {
+    left: 13px;
+    top: 28px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .timeline-item {
+    gap: var(--spacing-sm);
+    padding-bottom: var(--spacing-lg);
+  }
+
+  .timeline-marker {
+    width: 24px;
+    height: 24px;
+    border-width: 2px;
+  }
+
+  .timeline-marker-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .timeline-item::before {
+    left: 11px;
+    top: 24px;
+    width: 2px;
+  }
+
+  .timeline-title {
+    font-size: var(--font-size-body);
+  }
+
+  .timeline-organization {
+    font-size: var(--font-size-small);
+  }
+
+  .timeline-description {
+    font-size: var(--font-size-small);
+  }
+
+  .timeline-date {
+    font-size: 0.75rem;
+    padding: 2px var(--spacing-sm);
+  }
+}
+
+/* ============================================
+   Reduced Motion Support
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-marker:hover {
+    transform: none;
+  }
+}

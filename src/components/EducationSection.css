@@ -1,0 +1,165 @@
+/**
+ * EducationSection Styles
+ * 
+ * Styles for the education section with mint green (#98FF98) and paperish white (#FFFEF2) color scheme.
+ * Uses consistent styling with other sections and timeline components.
+ * 
+ * Requirements: 7.1, 7.2, 7.3, 7.4
+ */
+
+/* ============================================
+   Education Section Container
+   ============================================ */
+
+.education-section {
+  min-height: 100vh;
+  padding: var(--spacing-section) var(--spacing-lg);
+  background-color: var(--color-background);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background accent */
+.education-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    var(--color-background) 0%,
+    var(--color-background-alt) 50%,
+    var(--color-background) 100%
+  );
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.education-container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   Section Header
+   ============================================ */
+
+.education-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xxl);
+}
+
+.education-title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-md) 0;
+  line-height: var(--line-height-tight);
+}
+
+.education-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary) 0%,
+    var(--color-accent) 100%
+  );
+  border-radius: var(--radius-full);
+  margin: var(--spacing-md) auto 0;
+}
+
+.education-subtitle {
+  font-size: var(--font-size-body);
+  color: var(--color-text-light);
+  margin: 0;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: var(--line-height-relaxed);
+}
+
+/* ============================================
+   Timeline Container
+   ============================================ */
+
+.education-timeline {
+  max-width: 700px;
+  margin: 0 auto;
+  padding-left: var(--spacing-md);
+}
+
+/* ============================================
+   Empty State
+   ============================================ */
+
+.education-empty {
+  text-align: center;
+  color: var(--color-text-light);
+  font-size: var(--font-size-body);
+  padding: var(--spacing-xxl);
+  background: var(--color-background-alt);
+  border-radius: var(--radius-lg);
+  border: 2px dashed var(--color-primary);
+}
+
+/* ============================================
+   Responsive Styles
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .education-section {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .education-header {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .education-timeline {
+    padding-left: var(--spacing-sm);
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .education-section {
+    padding: var(--spacing-lg) var(--spacing-sm);
+    min-height: auto;
+  }
+
+  .education-title {
+    font-size: var(--font-size-h3);
+  }
+
+  .education-subtitle {
+    font-size: var(--font-size-small);
+  }
+
+  .education-timeline {
+    padding-left: 0;
+  }
+
+  .education-header {
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+/* ============================================
+   Reduced Motion Support
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .education-section::before {
+    animation: none;
+  }
+}

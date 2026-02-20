@@ -1,0 +1,214 @@
+/**
+ * ContactSection Styles
+ * 
+ * Styles for the contact section with mint green (#98FF98) accents
+ * and paperish white (#FFFEF2) background color scheme.
+ * 
+ * Requirements: 10.1, 10.5
+ */
+
+/* ============================================
+   Section Container
+   ============================================ */
+
+.contact-section {
+  min-height: 100vh;
+  padding: var(--spacing-section) 0;
+  background: var(--color-background-alt);
+  position: relative;
+}
+
+.contact-section-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-container);
+}
+
+/* ============================================
+   Section Header
+   ============================================ */
+
+.contact-section-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.contact-section-title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-md) 0;
+  position: relative;
+  display: inline-block;
+}
+
+.contact-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  border-radius: var(--radius-full);
+}
+
+.contact-section-subtitle {
+  font-size: var(--font-size-body);
+  color: var(--color-text-light);
+  max-width: 600px;
+  margin: var(--spacing-md) auto 0;
+  line-height: var(--line-height-relaxed);
+}
+
+/* ============================================
+   Content Layout
+   ============================================ */
+
+.contact-section-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ============================================
+   Contact Info
+   ============================================ */
+
+.contact-info {
+  max-width: 400px;
+  width: 100%;
+}
+
+.contact-email-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  color: var(--color-text);
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  transition: 
+    transform var(--duration-fast) ease,
+    opacity var(--duration-fast) ease;
+}
+
+.contact-email-card:hover {
+  transform: translateY(-2px);
+  opacity: 0.8;
+}
+
+.contact-gmail-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.contact-email-text {
+  font-size: 0.9rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+/* ============================================
+   Contact Form Wrapper
+   ============================================ */
+
+.contact-form-wrapper {
+  background: var(--color-background);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-form-title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-lg) 0;
+}
+
+/* ============================================
+   Responsive Styles
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .contact-section {
+    padding: calc(var(--spacing-section) * 0.8) 0;
+  }
+
+  .contact-section-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .contact-info,
+  .contact-form-wrapper {
+    padding: var(--spacing-lg);
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .contact-section {
+    padding: calc(var(--spacing-section) * 0.6) 0;
+  }
+
+  .contact-section-container {
+    padding: 0 var(--spacing-md);
+  }
+
+  .contact-section-title {
+    font-size: calc(var(--font-size-h2) * 0.75);
+  }
+
+  .contact-section-subtitle {
+    font-size: var(--font-size-small);
+  }
+
+  .contact-info,
+  .contact-form-wrapper {
+    padding: var(--spacing-md);
+  }
+
+  .contact-info-title,
+  .contact-form-title {
+    font-size: var(--font-size-body);
+  }
+
+  .contact-social-list {
+    flex-direction: column;
+  }
+
+  .contact-social-link {
+    justify-content: flex-start;
+  }
+}
+
+/* ============================================
+   Reduced Motion Support
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-info-email {
+    transition: none;
+  }
+
+  .contact-info-email:hover {
+    transform: none;
+  }
+
+  .contact-social-link {
+    transition: none;
+  }
+
+  .contact-social-link:hover {
+    transform: none;
+  }
+}

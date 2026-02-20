@@ -1,0 +1,57 @@
+/**
+ * PlantAnimation Styles
+ * 
+ * Styles for the animated growing plant in the background.
+ */
+
+.plant-animation {
+  position: fixed;
+  bottom: 0;
+  right: 5%;
+  width: 150px;
+  height: 300px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.6;
+}
+
+.plant-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.plant-stem {
+  filter: drop-shadow(0 2px 4px rgba(152, 255, 152, 0.3));
+}
+
+.plant-leaf {
+  filter: drop-shadow(0 2px 4px rgba(152, 255, 152, 0.2));
+  transform-origin: bottom center;
+}
+
+.plant-bud {
+  filter: drop-shadow(0 0 8px rgba(152, 255, 152, 0.4));
+}
+
+/* Responsive adjustments */
+@media (max-width: 1023px) {
+  .plant-animation {
+    width: 120px;
+    height: 240px;
+    right: 3%;
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 767px) {
+  .plant-animation {
+    display: none;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .plant-leaf {
+    animation: none !important;
+  }
+}

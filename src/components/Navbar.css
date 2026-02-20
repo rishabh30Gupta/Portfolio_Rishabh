@@ -1,0 +1,95 @@
+/**
+ * Navbar Styles
+ * 
+ * Additional styles for the navbar logo and animations.
+ */
+
+/* Logo wrapper hover effects */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.navbar-logo:hover {
+  background: rgba(152, 255, 152, 0.15);
+}
+
+.navbar-logo:hover .logo-leaf {
+  transform: rotate(-5deg) scale(1.1);
+}
+
+.navbar-logo:hover .logo-text {
+  color: #2d5a2d;
+}
+
+/* Logo leaf animation */
+.logo-leaf {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+  object-fit: contain;
+}
+
+/* Logo text styling */
+.logo-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3436;
+  letter-spacing: -0.02em;
+  transition: color 0.3s ease;
+}
+
+/* Gentle leaf sway animation */
+@keyframes leaf-sway {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+.logo-leaf {
+  animation: leaf-sway 3s ease-in-out infinite;
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  .navbar-logo {
+    gap: 6px;
+    padding: 2px 4px;
+  }
+
+  .logo-leaf {
+    width: 28px;
+    height: 28px;
+  }
+
+  .logo-text {
+    font-size: 1.25rem;
+  }
+}
+
+/* Fix hamburger button position */
+.hamburger-button {
+  flex-shrink: 0;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .logo-leaf {
+    animation: none;
+  }
+  
+  .navbar-logo:hover .logo-leaf {
+    transform: none;
+  }
+}

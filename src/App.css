@@ -1,0 +1,103 @@
+/**
+ * App Component Styles
+ * 
+ * Main application layout and structure styles.
+ */
+
+/* ============================================
+   App Container
+   ============================================ */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: var(--color-background);
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* ============================================
+   Skip Link (Accessibility)
+   ============================================ */
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--color-primary);
+  color: var(--color-text);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-md);
+  z-index: 10000;
+  transition: top var(--duration-fast) ease;
+}
+
+.skip-link:focus {
+  top: var(--spacing-md);
+}
+
+/* ============================================
+   Scroll Container
+   ============================================ */
+
+.scroll-container {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   Hero Wrapper with Cloud Layer
+   ============================================ */
+
+.hero-wrapper {
+  position: relative;
+  min-height: 100vh;
+  overflow: visible;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+
+.app-footer {
+  padding: var(--spacing-lg) 0;
+  background: var(--color-background-alt);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.app-footer p {
+  font-size: var(--font-size-small);
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+/* ============================================
+   Container Utility
+   ============================================ */
+
+.container {
+  max-width: var(--container-max-width, 1200px);
+  margin: 0 auto;
+  padding: 0 var(--spacing-container, 2rem);
+}
+
+/* ============================================
+   Responsive Styles
+   ============================================ */
+
+@media (max-width: 767px) {
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+
+  .app-footer {
+    padding: var(--spacing-md) 0;
+  }
+}

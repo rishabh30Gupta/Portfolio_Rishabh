@@ -1,0 +1,110 @@
+/**
+ * CloudLayer Styles
+ * 
+ * Creates a dense, fluffy white cloud layer effect
+ * inspired by hacknitr.com
+ */
+
+.cloud-layer {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 80vh;
+  pointer-events: none;
+  z-index: 20;
+  will-change: transform;
+}
+
+.cloud-layer__back,
+.cloud-layer__middle,
+.cloud-layer__front {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+}
+
+.cloud-layer__back {
+  height: 350px;
+  z-index: 1;
+}
+
+.cloud-layer__middle {
+  height: 420px;
+  z-index: 2;
+}
+
+.cloud-layer__front {
+  height: 500px;
+  z-index: 3;
+}
+
+.cloud-layer__back svg,
+.cloud-layer__middle svg,
+.cloud-layer__front svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Cloud colors - white with black outlines like hacknitr */
+.cloud-back {
+  fill: #ffffff;
+  stroke: #333333;
+  stroke-width: 1.5;
+}
+
+.cloud-mid {
+  fill: #ffffff;
+  stroke: #222222;
+  stroke-width: 2;
+}
+
+.cloud-front {
+  fill: #ffffff;
+  stroke: #111111;
+  stroke-width: 2.5;
+}
+
+/* Bottom fill to cover any gaps */
+.cloud-layer__fill {
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: #ffffff;
+  z-index: 4;
+}
+
+/* Add subtle outline effect for depth */
+.cloud-front-group ellipse,
+.cloud-group ellipse {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cloud-layer {
+    height: 40vh;
+  }
+  
+  .cloud-layer__back {
+    height: 200px;
+  }
+  
+  .cloud-layer__middle {
+    height: 250px;
+  }
+  
+  .cloud-layer__front {
+    height: 300px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .cloud-layer {
+    display: none;
+  }
+}

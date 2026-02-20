@@ -1,0 +1,99 @@
+/**
+ * FloatingContactTray Styles
+ * 
+ * Fixed bottom tray with all contact icons
+ */
+
+.floating-contact-tray {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.floating-contact-tray-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #FFFEF2;
+  border-radius: 50px;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(152, 255, 152, 0.3);
+}
+
+.floating-contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #333;
+  text-decoration: none;
+  transition: 
+    color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 50%;
+}
+
+.floating-contact-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.floating-contact-icon:hover {
+  color: var(--color-primary);
+  transform: translateY(-4px);
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .floating-contact-tray {
+    bottom: 16px;
+  }
+
+  .floating-contact-tray-content {
+    padding: 10px 20px;
+    gap: 6px;
+  }
+
+  .floating-contact-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .floating-contact-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .floating-contact-tray {
+    animation: none;
+  }
+
+  .floating-contact-icon {
+    transition: none;
+  }
+
+  .floating-contact-icon:hover {
+    transform: none;
+  }
+}

@@ -1,0 +1,201 @@
+/**
+ * AchievementCard Styles
+ * 
+ * Styles for achievement cards with mint green (#98FF98) accents
+ * and paperish white (#FFFEF2) background color scheme.
+ * Includes hover animations with scale and shadow effects.
+ * 
+ * Requirements: 9.1, 9.2, 9.3
+ */
+
+/* ============================================
+   Achievement Card Container
+   ============================================ */
+
+.achievement-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background: var(--color-background);
+  border: 2px solid transparent;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: 
+    transform var(--duration-fast) ease,
+    box-shadow var(--duration-fast) ease,
+    border-color var(--duration-fast) ease;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle gradient overlay on hover */
+.achievement-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(152, 255, 152, 0.05) 0%,
+    rgba(0, 184, 148, 0.05) 100%
+  );
+  opacity: 0;
+  transition: opacity var(--duration-fast) ease;
+  pointer-events: none;
+}
+
+/* Hover state with scale and shadow effects */
+.achievement-card:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+
+.achievement-card:hover::before {
+  opacity: 1;
+}
+
+/* Focus state for accessibility */
+.achievement-card:focus-within {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   Achievement Card Icon
+   ============================================ */
+
+.achievement-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-light) 100%
+  );
+  border-radius: var(--radius-md);
+  font-size: 1.5rem;
+  color: var(--color-text);
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--duration-fast) ease;
+}
+
+.achievement-card:hover .achievement-card-icon {
+  transform: scale(1.1);
+}
+
+/* ============================================
+   Achievement Card Content
+   ============================================ */
+
+.achievement-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  position: relative;
+  z-index: 1;
+}
+
+/* Date badge */
+.achievement-card-date {
+  display: inline-block;
+  width: fit-content;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--color-background-alt);
+  color: var(--color-text-light);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-full);
+}
+
+/* Title */
+.achievement-card-title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin: 0;
+  line-height: var(--line-height-tight);
+}
+
+/* Description */
+.achievement-card-description {
+  font-size: var(--font-size-body);
+  color: var(--color-text-light);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+/* ============================================
+   Responsive Styles
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .achievement-card {
+    padding: var(--spacing-md);
+  }
+
+  .achievement-card-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .achievement-card {
+    padding: var(--spacing-md);
+    gap: var(--spacing-sm);
+  }
+
+  .achievement-card-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.125rem;
+  }
+
+  .achievement-card-title {
+    font-size: var(--font-size-body);
+  }
+
+  .achievement-card-description {
+    font-size: var(--font-size-small);
+  }
+
+  /* Reduce hover scale on mobile for better touch experience */
+  .achievement-card:hover {
+    transform: scale(1.02);
+  }
+}
+
+/* ============================================
+   Reduced Motion Support
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .achievement-card {
+    transition: none;
+  }
+
+  .achievement-card::before {
+    transition: none;
+  }
+
+  .achievement-card:hover {
+    transform: none;
+  }
+
+  .achievement-card:hover .achievement-card-icon {
+    transform: none;
+  }
+}

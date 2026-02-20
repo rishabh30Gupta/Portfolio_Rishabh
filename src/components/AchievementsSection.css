@@ -1,0 +1,169 @@
+/**
+ * AchievementsSection Styles
+ * 
+ * Styles for the achievements section with mint green (#98FF98) and paperish white (#FFFEF2) color scheme.
+ * Features a responsive grid layout with staggered entrance animations.
+ * 
+ * Requirements: 9.1, 9.2, 9.3, 9.4
+ */
+
+/* ============================================
+   Achievements Section Container
+   ============================================ */
+
+.achievements-section {
+  min-height: 100vh;
+  padding: var(--spacing-section) var(--spacing-lg);
+  background-color: var(--color-background);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background accent */
+.achievements-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    var(--color-background) 0%,
+    var(--color-background-alt) 50%,
+    var(--color-background) 100%
+  );
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.achievements-container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   Section Header
+   ============================================ */
+
+.achievements-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xxl);
+}
+
+.achievements-title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-md) 0;
+  line-height: var(--line-height-tight);
+}
+
+.achievements-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary) 0%,
+    var(--color-accent) 100%
+  );
+  border-radius: var(--radius-full);
+  margin: var(--spacing-md) auto 0;
+}
+
+.achievements-subtitle {
+  font-size: var(--font-size-body);
+  color: var(--color-text-light);
+  margin: 0;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: var(--line-height-relaxed);
+}
+
+/* ============================================
+   Achievements Grid
+   ============================================ */
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   Empty State
+   ============================================ */
+
+.achievements-empty {
+  text-align: center;
+  color: var(--color-text-light);
+  font-size: var(--font-size-body);
+  padding: var(--spacing-xxl);
+  background: var(--color-background-alt);
+  border-radius: var(--radius-lg);
+  border: 2px dashed var(--color-primary);
+}
+
+/* ============================================
+   Responsive Styles
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .achievements-section {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .achievements-header {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .achievements-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .achievements-section {
+    padding: var(--spacing-lg) var(--spacing-sm);
+    min-height: auto;
+  }
+
+  .achievements-title {
+    font-size: var(--font-size-h3);
+  }
+
+  .achievements-subtitle {
+    font-size: var(--font-size-small);
+  }
+
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .achievements-header {
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+/* ============================================
+   Reduced Motion Support
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .achievements-section::before {
+    animation: none;
+  }
+}

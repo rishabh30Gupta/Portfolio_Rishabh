@@ -1,0 +1,54 @@
+/**
+ * BloomingClouds Styles
+ * 
+ * Light green fluffy clouds at bottom of hero that spread on scroll
+ */
+
+.blooming-clouds {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+  max-width: 100vw;
+}
+
+.blooming-cloud {
+  position: absolute;
+  will-change: transform, opacity, left, top;
+}
+
+.cloud-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.cloud-svg path {
+  fill: rgba(152, 255, 152, 0.35);
+  stroke: rgba(125, 216, 125, 0.6);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
+/* Mobile - smaller clouds, slightly more transparent */
+@media (max-width: 767px) {
+  .blooming-clouds {
+    height: 100vh;
+  }
+
+  .cloud-svg path {
+    fill: rgba(152, 255, 152, 0.3);
+    stroke: rgba(125, 216, 125, 0.5);
+    stroke-width: 1;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .blooming-clouds {
+    display: none;
+  }
+}
