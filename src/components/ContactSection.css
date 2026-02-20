@@ -71,6 +71,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: var(--spacing-xl) 0;
 }
 
 /* ============================================
@@ -80,6 +81,8 @@
 .contact-info {
   max-width: 400px;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .contact-email-card {
@@ -114,24 +117,7 @@
   color: var(--color-text);
 }
 
-/* ============================================
-   Contact Form Wrapper
-   ============================================ */
 
-.contact-form-wrapper {
-  background: var(--color-background);
-  padding: var(--spacing-xl);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
-}
-
-.contact-form-title {
-  font-family: var(--font-heading);
-  font-size: var(--font-size-h4);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text);
-  margin: 0 0 var(--spacing-lg) 0;
-}
 
 /* ============================================
    Responsive Styles
@@ -141,16 +127,6 @@
 @media (max-width: 1023px) {
   .contact-section {
     padding: calc(var(--spacing-section) * 0.8) 0;
-  }
-
-  .contact-section-content {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
-  }
-
-  .contact-info,
-  .contact-form-wrapper {
-    padding: var(--spacing-lg);
   }
 }
 
@@ -170,24 +146,6 @@
 
   .contact-section-subtitle {
     font-size: var(--font-size-small);
-  }
-
-  .contact-info,
-  .contact-form-wrapper {
-    padding: var(--spacing-md);
-  }
-
-  .contact-info-title,
-  .contact-form-title {
-    font-size: var(--font-size-body);
-  }
-
-  .contact-social-list {
-    flex-direction: column;
-  }
-
-  .contact-social-link {
-    justify-content: flex-start;
   }
 }
 

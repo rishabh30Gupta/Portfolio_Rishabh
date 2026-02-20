@@ -281,7 +281,6 @@
   font-weight: var(--font-weight-medium);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  opacity: 0;
 }
 
 .hero-name {
@@ -291,7 +290,6 @@
   color: var(--color-text);
   line-height: var(--line-height-tight);
   margin: 0;
-  opacity: 0;
 }
 
 .hero-name::after {
@@ -313,7 +311,6 @@
   color: var(--color-text-light);
   line-height: var(--line-height-relaxed);
   margin: var(--spacing-md) 0;
-  opacity: 0;
 }
 
 .hero-word {
@@ -325,7 +322,6 @@
   font-size: var(--font-size-body);
   color: var(--color-text-light);
   font-style: italic;
-  opacity: 0;
 }
 
 /* ============================================

@@ -57,20 +57,18 @@ export function ContactSection({
 
         <div className="contact-section-content">
           {/* Gmail Contact */}
-          <RevealWrapper direction="up" delay={0.2} duration={0.6}>
-            <div className="contact-info">
-              {email && (
-                <a href={`mailto:${email}`} className="contact-email-card">
-                  <img 
-                    src="https://img.icons8.com/color/96/gmail-new.png" 
-                    alt="Gmail"
-                    className="contact-gmail-icon"
-                  />
-                  <span className="contact-email-text">{email}</span>
-                </a>
-              )}
-            </div>
-          </RevealWrapper>
+          <div className="contact-info">
+            {email && (
+              <a href={`mailto:${email}`} className="contact-email-card">
+                <img 
+                  src="https://img.icons8.com/color/96/gmail-new.png" 
+                  alt="Gmail"
+                  className="contact-gmail-icon"
+                />
+                <span className="contact-email-text">{email}</span>
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </section>

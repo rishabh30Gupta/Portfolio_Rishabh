@@ -10,9 +10,7 @@
 
 import { useRef, useEffect, useState } from 'react';
 import gsap from 'gsap';
-import { RevealWrapper } from './RevealWrapper';
 import { useAnimationContext } from '../context/AnimationContext';
-import { theme } from '../theme/theme';
 import './HeroSection.css';
 
 /**
@@ -83,8 +81,8 @@ export function HeroSection({
       scale: 1,
       opacity: 1,
       rotate: 0,
-      duration: theme.animation.duration.slow,
-      ease: theme.animation.easing.bounce,
+      duration: 1.2,
+      ease: 'back.out(1.7)',
       delay: 0.2,
     });
 
@@ -123,42 +121,18 @@ export function HeroSection({
 
           {/* Text Content */}
           <div className="hero-text-content">
-            {/* Greeting with reveal animation */}
-            <RevealWrapper
-              direction="up"
-              delay={0.3}
-              duration={theme.animation.duration.normal}
-            >
-              <span className="hero-greeting">Hello, I'm</span>
-            </RevealWrapper>
+            {/* Greeting */}
+            <span className="hero-greeting">Hello, I'm</span>
 
-            {/* Name with reveal animation */}
-            <RevealWrapper
-              direction="up"
-              delay={0.4}
-              duration={theme.animation.duration.normal}
-            >
-              <h1 className="hero-name">{name}</h1>
-            </RevealWrapper>
+            {/* Name */}
+            <h1 className="hero-name">{name}</h1>
 
-            {/* Intro text with fade animation */}
-            <RevealWrapper
-              direction="fade"
-              delay={0.5}
-              duration={0.8}
-            >
-              <p className="hero-intro">{introText}</p>
-            </RevealWrapper>
+            {/* Intro text */}
+            <p className="hero-intro">{introText}</p>
 
             {/* Optional subtitle */}
             {subtitle && (
-              <RevealWrapper
-                direction="fade"
-                delay={0.8}
-                duration={0.8}
-              >
-                <p className="hero-subtitle">{subtitle}</p>
-              </RevealWrapper>
+              <p className="hero-subtitle">{subtitle}</p>
             )}
           </div>
         </div>
