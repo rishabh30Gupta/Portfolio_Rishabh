@@ -83,16 +83,16 @@ export interface ThemeConfig {
 
 export const theme: ThemeConfig = {
   colors: {
-    primary: '#98FF98',           // Mint green
-    primaryDark: '#7DD87D',       // Darker mint
-    primaryLight: '#B8FFB8',      // Lighter mint
-    background: '#FFFEF2',        // Paperish white
-    backgroundAlt: '#F5F4E8',     // Slightly darker paper
-    text: '#2D3436',              // Dark text
-    textLight: '#636E72',         // Light text
-    accent: '#00B894',            // Accent color
-    error: '#E74C3C',             // Error red
-    success: '#27AE60',           // Success green
+    primary: '#182E6F',           // Deep navy blue
+    primaryDark: '#0F1D47',       // Darker navy
+    primaryLight: '#2A4494',      // Lighter navy
+    background: '#FFFFFF',        // Pure white
+    backgroundAlt: '#F0F4FF',     // Light blue-white
+    text: '#1A1A1A',              // Almost black
+    textLight: '#4A5568',         // Dark gray text
+    accent: '#182E6F',            // Deep navy accent
+    error: '#DC3545',             // Error red
+    success: '#28A745',           // Success green
   },
   typography: {
     fontFamily: "'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",

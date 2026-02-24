@@ -1,40 +1,40 @@
 /**
  * Navbar Styles
  * 
- * Additional styles for the navbar logo and animations.
+ * Modern navbar with pill-shaped buttons.
  */
 
 /* Logo wrapper hover effects */
 .navbar-logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   cursor: pointer;
   background: none;
   border: none;
-  padding: 4px 8px;
+  padding: 6px 12px;
   border-radius: 8px;
   transition: all 0.3s ease;
 }
 
 .navbar-logo:hover {
-  background: rgba(152, 255, 152, 0.15);
+  background: rgba(24, 46, 111, 0.05);
 }
 
-.navbar-logo:hover .logo-leaf {
-  transform: rotate(-5deg) scale(1.1);
+.navbar-logo:hover .logo-icon {
+  transform: scale(1.1) rotate(5deg);
 }
 
 .navbar-logo:hover .logo-text {
-  color: #2d5a2d;
+  color: var(--color-primary);
 }
 
-/* Logo leaf animation */
-.logo-leaf {
-  width: 32px;
-  height: 32px;
+/* Logo icon animation */
+.logo-icon {
+  width: 28px;
+  height: 28px;
   transition: transform 0.3s ease;
-  object-fit: contain;
+  fill: var(--color-primary);
 }
 
 /* Logo text styling */
@@ -42,35 +42,28 @@
   font-family: 'Poppins', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #2d3436;
+  color: var(--color-text);
   letter-spacing: -0.02em;
   transition: color 0.3s ease;
 }
 
-/* Gentle leaf sway animation */
-@keyframes leaf-sway {
-  0%, 100% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(3deg);
-  }
-}
-
-.logo-leaf {
-  animation: leaf-sway 3s ease-in-out infinite;
+/* Add hover effect for nav links */
+.desktop-nav button:hover {
+  background: rgba(24, 46, 111, 0.05) !important;
+  border-color: rgba(24, 46, 111, 0.15) !important;
+  transform: translateY(-1px);
 }
 
 /* Mobile styles */
 @media (max-width: 767px) {
   .navbar-logo {
-    gap: 6px;
-    padding: 2px 4px;
+    gap: 8px;
+    padding: 4px 8px;
   }
 
-  .logo-leaf {
-    width: 28px;
-    height: 28px;
+  .logo-icon {
+    width: 24px;
+    height: 24px;
   }
 
   .logo-text {
@@ -83,13 +76,22 @@
   flex-shrink: 0;
 }
 
+/* Hamburger lines styling */
+.hamburger-button span {
+  background-color: var(--color-text);
+}
+
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
-  .logo-leaf {
+  .logo-icon {
     animation: none;
   }
   
-  .navbar-logo:hover .logo-leaf {
+  .navbar-logo:hover .logo-icon {
+    transform: none;
+  }
+  
+  .desktop-nav button:hover {
     transform: none;
   }
 }

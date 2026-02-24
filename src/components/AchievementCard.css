@@ -1,9 +1,8 @@
 /**
  * AchievementCard Styles
  * 
- * Styles for achievement cards with mint green (#98FF98) accents
- * and paperish white (#FFFEF2) background color scheme.
- * Includes hover animations with scale and shadow effects.
+ * Modern card design with deep navy blue (#182E6F) accents
+ * and clean white background.
  * 
  * Requirements: 9.1, 9.2, 9.3
  */
@@ -16,11 +15,11 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
-  padding: var(--spacing-lg);
+  padding: var(--spacing-xl);
   background: var(--color-background);
-  border: 2px solid transparent;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(24, 46, 111, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(24, 46, 111, 0.06);
   transition: 
     transform var(--duration-fast) ease,
     box-shadow var(--duration-fast) ease,
@@ -30,33 +29,11 @@
   overflow: hidden;
 }
 
-/* Subtle gradient overlay on hover */
-.achievement-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(152, 255, 152, 0.05) 0%,
-    rgba(0, 184, 148, 0.05) 100%
-  );
-  opacity: 0;
-  transition: opacity var(--duration-fast) ease;
-  pointer-events: none;
-}
-
 /* Hover state with scale and shadow effects */
 .achievement-card:hover {
-  transform: scale(1.03);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(24, 46, 111, 0.12);
   border-color: var(--color-primary);
-}
-
-.achievement-card:hover::before {
-  opacity: 1;
 }
 
 /* Focus state for accessibility */
@@ -73,23 +50,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  background: linear-gradient(
-    135deg,
-    var(--color-primary) 0%,
-    var(--color-primary-light) 100%
-  );
-  border-radius: var(--radius-md);
-  font-size: 1.5rem;
-  color: var(--color-text);
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  border-radius: 12px;
+  font-size: 1.75rem;
+  color: white;
   flex-shrink: 0;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 12px rgba(24, 46, 111, 0.2);
   transition: transform var(--duration-fast) ease;
 }
 
 .achievement-card:hover .achievement-card-icon {
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(5deg);
 }
 
 /* ============================================
@@ -108,12 +81,13 @@
 .achievement-card-date {
   display: inline-block;
   width: fit-content;
-  padding: var(--spacing-xs) var(--spacing-sm);
+  padding: 4px 12px;
   background: var(--color-background-alt);
-  color: var(--color-text-light);
+  color: var(--color-primary);
   font-size: var(--font-size-small);
-  font-weight: var(--font-weight-medium);
-  border-radius: var(--radius-full);
+  font-weight: var(--font-weight-semibold);
+  border-radius: 6px;
+  border: 1px solid rgba(24, 46, 111, 0.1);
 }
 
 /* Title */
@@ -141,13 +115,13 @@
 /* Tablet */
 @media (max-width: 1023px) {
   .achievement-card {
-    padding: var(--spacing-md);
+    padding: var(--spacing-lg);
   }
 
   .achievement-card-icon {
-    width: 44px;
-    height: 44px;
-    font-size: 1.25rem;
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
   }
 }
 
@@ -159,9 +133,9 @@
   }
 
   .achievement-card-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 1.125rem;
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
   }
 
   .achievement-card-title {
@@ -174,7 +148,7 @@
 
   /* Reduce hover scale on mobile for better touch experience */
   .achievement-card:hover {
-    transform: scale(1.02);
+    transform: translateY(-2px);
   }
 }
 
@@ -184,10 +158,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   .achievement-card {
-    transition: none;
-  }
-
-  .achievement-card::before {
     transition: none;
   }
 

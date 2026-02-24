@@ -5,7 +5,6 @@
  * - AnimationProvider for global animation state
  * - Navbar for navigation
  * - All section components
- * - DecorativeManager for visual effects
  * 
  * Requirements: All
  */
@@ -19,8 +18,6 @@ import { AchievementsSection } from './components/AchievementsSection';
 import { ProjectGallery } from './components/ProjectGallery';
 import { ContactSection } from './components/ContactSection';
 import { FloatingContactTray } from './components/FloatingContactTray';
-import { BloomingClouds } from './components/BloomingClouds';
-import { PlantAnimation } from './components/PlantAnimation';
 import { portfolioData } from './data/portfolioData';
 import './App.css';
 
@@ -35,12 +32,6 @@ function App() {
 
         {/* Navigation */}
         <Navbar />
-
-        {/* Blooming clouds effect - clusters in center, spreads on scroll */}
-        <BloomingClouds />
-
-        {/* Growing plant animation in background */}
-        <PlantAnimation />
 
         {/* Main content area */}
         <main id="main-content" className="scroll-container">

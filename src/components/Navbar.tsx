@@ -54,9 +54,10 @@ const styles: Record<string, CSSProperties> = {
     left: 0,
     right: 0,
     zIndex: 1000,
-    backgroundColor: theme.colors.background,
-    boxShadow: theme.shadows.sm,
+    backgroundColor: '#FFFFFF',
+    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
     transition: `all ${theme.animation.duration.fast}s ease`,
+    borderBottom: '1px solid rgba(0, 0, 0, 0.06)',
   },
   container: {
     width: '100%',
@@ -83,27 +84,29 @@ const styles: Record<string, CSSProperties> = {
     position: 'relative' as const,
     fontFamily: theme.typography.fontFamily,
     fontSize: theme.typography.sizes.body,
-    fontWeight: theme.typography.weights.medium,
-    color: theme.colors.textLight,
+    fontWeight: theme.typography.weights.semibold,
+    color: theme.colors.text,
     textDecoration: 'none',
-    padding: `${theme.spacing.sm} ${theme.spacing.md}`,
-    borderRadius: theme.borderRadius.md,
+    padding: `${theme.spacing.sm} ${theme.spacing.lg}`,
+    borderRadius: '8px',
     cursor: 'pointer',
     transition: `all ${theme.animation.duration.fast}s ease`,
-    border: 'none',
+    border: '2px solid transparent',
     background: 'transparent',
   },
   navLinkActive: {
-    color: theme.colors.text,
-    backgroundColor: theme.colors.primaryLight,
+    color: theme.colors.primary,
+    backgroundColor: '#E8EEFF',
+    border: '2px solid rgba(24, 46, 111, 0.2)',
+    fontWeight: theme.typography.weights.bold,
   },
   activeIndicator: {
     position: 'absolute' as const,
-    bottom: 0,
+    bottom: '-2px',
     left: '50%',
     transform: 'translateX(-50%)',
-    width: '4px',
-    height: '4px',
+    width: '6px',
+    height: '6px',
     borderRadius: theme.borderRadius.full,
     backgroundColor: theme.colors.primary,
     transition: `all ${theme.animation.duration.fast}s ease`,
@@ -179,7 +182,7 @@ const styles: Record<string, CSSProperties> = {
     fontFamily: theme.typography.fontFamily,
     fontSize: theme.typography.sizes.h4,
     fontWeight: theme.typography.weights.medium,
-    color: theme.colors.textLight,
+    color: theme.colors.text,
     textDecoration: 'none',
     padding: `${theme.spacing.md} ${theme.spacing.lg}`,
     borderRadius: theme.borderRadius.md,
@@ -192,8 +195,8 @@ const styles: Record<string, CSSProperties> = {
     minHeight: '48px', // Touch-friendly tap target (48px minimum)
   },
   mobileNavLinkActive: {
-    color: theme.colors.text,
-    backgroundColor: theme.colors.primaryLight,
+    color: theme.colors.primary,
+    backgroundColor: theme.colors.backgroundAlt,
   },
 };
 
@@ -206,7 +209,7 @@ const styles: Record<string, CSSProperties> = {
 export function Navbar({
   sections = DEFAULT_SECTIONS,
   className = '',
-  logo = 'NanEvo',
+  logo = 'RishRealm',
 }: NavbarProps) {
   const { currentSection, scrollToSection } = useScrollController({
     sectionIds: sections.map(s => s.id),
@@ -344,7 +347,7 @@ export function Navbar({
       aria-label="Main navigation"
     >
       <div style={styles.container}>
-        {/* Logo with leaf icon */}
+        {/* Logo with code icon */}
         <div
           className="navbar-logo"
           onClick={handleLogoClick}
@@ -353,13 +356,15 @@ export function Navbar({
           tabIndex={0}
           aria-label="Go to home section"
         >
-          {/* Nature leaf image */}
-          <img 
-            className="logo-leaf"
-            src="https://i.postimg.cc/CLF5zPCT/nature-12697250.png"
-            alt=""
+          {/* Code icon SVG */}
+          <svg 
+            className="logo-icon"
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 640 640"
             aria-hidden="true"
-          />
+          >
+            <path d="M392.8 65.2C375.8 60.3 358.1 70.2 353.2 87.2L225.2 535.2C220.3 552.2 230.2 569.9 247.2 574.8C264.2 579.7 281.9 569.8 286.8 552.8L414.8 104.8C419.7 87.8 409.8 70.1 392.8 65.2zM457.4 201.3C444.9 213.8 444.9 234.1 457.4 246.6L530.8 320L457.4 393.4C444.9 405.9 444.9 426.2 457.4 438.7C469.9 451.2 490.2 451.2 502.7 438.7L598.7 342.7C611.2 330.2 611.2 309.9 598.7 297.4L502.7 201.4C490.2 188.9 469.9 188.9 457.4 201.4zM182.7 201.3C170.2 188.8 149.9 188.8 137.4 201.3L41.4 297.3C28.9 309.8 28.9 330.1 41.4 342.6L137.4 438.6C149.9 451.1 170.2 451.1 182.7 438.6C195.2 426.1 195.2 405.8 182.7 393.3L109.3 320L182.6 246.6C195.1 234.1 195.1 213.8 182.6 201.3z"/>
+          </svg>
           <span className="logo-text">{logo}</span>
         </div>
 

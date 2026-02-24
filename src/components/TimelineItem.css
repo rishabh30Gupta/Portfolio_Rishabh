@@ -1,8 +1,7 @@
 /**
  * TimelineItem Styles
  * 
- * Styles for timeline entries with mint green (#98FF98) accent line and markers.
- * Uses paperish white (#FFFEF2) background color scheme.
+ * Modern timeline design with deep navy blue (#182E6F) accent line and markers.
  * 
  * Requirements: 7.1, 7.2, 7.4, 8.1, 8.2, 8.4
  */
@@ -25,13 +24,9 @@
   left: 15px;
   top: 32px;
   bottom: 0;
-  width: 2px;
-  background: linear-gradient(
-    180deg,
-    var(--color-primary) 0%,
-    var(--color-primary-dark) 100%
-  );
-  opacity: 0.6;
+  width: 3px;
+  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  opacity: 0.3;
 }
 
 /* Remove line from last item */
@@ -57,32 +52,28 @@
   z-index: 2;
   box-shadow: 
     0 0 0 4px var(--color-background),
-    var(--shadow-sm);
+    0 2px 8px rgba(24, 46, 111, 0.15);
   transition: all var(--duration-fast) ease;
 }
 
 .timeline-marker:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
   border-color: var(--color-primary-dark);
   box-shadow: 
     0 0 0 4px var(--color-background),
-    0 0 15px rgba(152, 255, 152, 0.4);
+    0 4px 16px rgba(24, 46, 111, 0.3);
 }
 
 .timeline-marker-dot {
   width: 10px;
   height: 10px;
-  background: linear-gradient(
-    135deg,
-    var(--color-primary) 0%,
-    var(--color-accent) 100%
-  );
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
   border-radius: 50%;
 }
 
 .timeline-marker-icon {
   font-size: var(--font-size-body);
-  color: var(--color-accent);
+  color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,18 +91,14 @@
 /* Date badge */
 .timeline-date {
   display: inline-block;
-  padding: var(--spacing-xs) var(--spacing-md);
-  background: linear-gradient(
-    135deg,
-    var(--color-primary) 0%,
-    var(--color-primary-light) 100%
-  );
-  color: var(--color-text);
+  padding: 6px 16px;
+  background: var(--color-primary);
+  color: white;
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-semibold);
-  border-radius: var(--radius-full);
+  border-radius: 6px;
   margin-bottom: var(--spacing-sm);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 8px rgba(24, 46, 111, 0.2);
 }
 
 /* Title */
@@ -128,7 +115,7 @@
 .timeline-organization {
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-medium);
-  color: var(--color-accent);
+  color: var(--color-primary);
   margin: 0 0 var(--spacing-sm) 0;
 }
 
@@ -233,7 +220,7 @@
 
   .timeline-date {
     font-size: 0.75rem;
-    padding: 2px var(--spacing-sm);
+    padding: 4px 12px;
   }
 }
 
