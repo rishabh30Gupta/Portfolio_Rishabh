@@ -72,11 +72,10 @@ const styles: Record<string, CSSProperties> = {
     display: 'flex',
     listStyle: 'none',
     margin: 0,
-    padding: 0,
+    padding: '4px',
     gap: '6px',
     backgroundColor: '#F5F7FB',
     borderRadius: '12px',
-    padding2: '4px',
   },
   navItem: {
     margin: 0,
@@ -365,7 +364,6 @@ export function Navbar({
           style={{
             ...styles.navList,
             display: isMobile ? 'none' : 'flex',
-            padding: '4px',
           }} 
           role="menubar"
           className="desktop-nav"
