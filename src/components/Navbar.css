@@ -1,10 +1,10 @@
 /**
  * Navbar Styles
  * 
- * Modern navbar with pill-shaped buttons.
+ * Clean, elegant navbar design.
  */
 
-/* Logo wrapper hover effects */
+/* Logo wrapper */
 .navbar-logo {
   display: flex;
   align-items: center;
@@ -12,62 +12,56 @@
   cursor: pointer;
   background: none;
   border: none;
-  padding: 6px 12px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  padding: 6px 10px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
 }
 
 .navbar-logo:hover {
-  background: rgba(24, 46, 111, 0.05);
+  background: #F5F7FB;
 }
 
 .navbar-logo:hover .logo-icon {
-  transform: scale(1.1) rotate(5deg);
+  transform: scale(1.08);
 }
 
-.navbar-logo:hover .logo-text {
-  color: var(--color-primary);
-}
-
-/* Logo icon animation */
+/* Logo icon */
 .logo-icon {
-  width: 28px;
-  height: 28px;
-  transition: transform 0.3s ease;
-  fill: var(--color-primary);
+  width: 26px;
+  height: 26px;
+  transition: transform 0.2s ease;
+  fill: #182E6F;
 }
 
-/* Logo text styling */
+/* Logo text */
 .logo-text {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 700;
-  color: var(--color-text);
+  color: #1A1A1A;
   letter-spacing: -0.02em;
-  transition: color 0.3s ease;
 }
 
-/* Add hover effect for nav links */
+/* Nav link hover */
 .desktop-nav button:hover {
-  background: rgba(24, 46, 111, 0.05) !important;
-  border-color: rgba(24, 46, 111, 0.15) !important;
-  transform: translateY(-1px);
+  color: #182E6F !important;
+  background: rgba(24, 46, 111, 0.04) !important;
 }
 
 /* Mobile styles */
 @media (max-width: 767px) {
   .navbar-logo {
     gap: 8px;
-    padding: 4px 8px;
+    padding: 4px 6px;
   }
 
   .logo-icon {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
   }
 
   .logo-text {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -76,22 +70,17 @@
   flex-shrink: 0;
 }
 
-/* Hamburger lines styling */
 .hamburger-button span {
-  background-color: var(--color-text);
+  background-color: #1A1A1A;
 }
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
-  .logo-icon {
-    animation: none;
-  }
-  
   .navbar-logo:hover .logo-icon {
     transform: none;
   }
-  
+
   .desktop-nav button:hover {
-    transform: none;
+    transform: none !important;
   }
 }

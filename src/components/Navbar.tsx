@@ -55,15 +55,14 @@ const styles: Record<string, CSSProperties> = {
     right: 0,
     zIndex: 1000,
     backgroundColor: '#FFFFFF',
-    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
     transition: `all ${theme.animation.duration.fast}s ease`,
-    borderBottom: '1px solid rgba(0, 0, 0, 0.06)',
+    borderBottom: '1px solid #EAEEF6',
   },
   container: {
     width: '100%',
     maxWidth: theme.spacing.container,
     margin: '0 auto',
-    padding: `${theme.spacing.md} ${theme.spacing.lg}`,
+    padding: `14px ${theme.spacing.lg}`,
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -74,7 +73,10 @@ const styles: Record<string, CSSProperties> = {
     listStyle: 'none',
     margin: 0,
     padding: 0,
-    gap: theme.spacing.lg,
+    gap: '6px',
+    backgroundColor: '#F5F7FB',
+    borderRadius: '12px',
+    padding2: '4px',
   },
   navItem: {
     margin: 0,
@@ -83,33 +85,23 @@ const styles: Record<string, CSSProperties> = {
   navLink: {
     position: 'relative' as const,
     fontFamily: theme.typography.fontFamily,
-    fontSize: theme.typography.sizes.body,
-    fontWeight: theme.typography.weights.semibold,
-    color: theme.colors.text,
+    fontSize: '0.9rem',
+    fontWeight: theme.typography.weights.medium,
+    color: '#64748B',
     textDecoration: 'none',
-    padding: `${theme.spacing.sm} ${theme.spacing.lg}`,
-    borderRadius: '8px',
+    padding: '8px 20px',
+    borderRadius: '10px',
     cursor: 'pointer',
-    transition: `all ${theme.animation.duration.fast}s ease`,
-    border: '2px solid transparent',
+    transition: `all 0.2s ease`,
+    border: 'none',
     background: 'transparent',
+    letterSpacing: '0.01em',
   },
   navLinkActive: {
-    color: theme.colors.primary,
-    backgroundColor: '#E8EEFF',
-    border: '2px solid rgba(24, 46, 111, 0.2)',
-    fontWeight: theme.typography.weights.bold,
-  },
-  activeIndicator: {
-    position: 'absolute' as const,
-    bottom: '-2px',
-    left: '50%',
-    transform: 'translateX(-50%)',
-    width: '6px',
-    height: '6px',
-    borderRadius: theme.borderRadius.full,
-    backgroundColor: theme.colors.primary,
-    transition: `all ${theme.animation.duration.fast}s ease`,
+    color: '#182E6F',
+    backgroundColor: '#FFFFFF',
+    fontWeight: theme.typography.weights.semibold,
+    boxShadow: '0 1px 3px rgba(24, 46, 111, 0.1)',
   },
   // Mobile hamburger button
   hamburgerButton: {
@@ -373,6 +365,7 @@ export function Navbar({
           style={{
             ...styles.navList,
             display: isMobile ? 'none' : 'flex',
+            padding: '4px',
           }} 
           role="menubar"
           className="desktop-nav"
@@ -396,7 +389,6 @@ export function Navbar({
                   type="button"
                 >
                   {section.label}
-                  {isActive && <span style={styles.activeIndicator} aria-hidden="true" />}
                 </button>
               </li>
             );

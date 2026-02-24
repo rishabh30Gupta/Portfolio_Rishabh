@@ -17,7 +17,6 @@ import { ExperienceSection } from './components/ExperienceSection';
 import { AchievementsSection } from './components/AchievementsSection';
 import { ProjectGallery } from './components/ProjectGallery';
 import { ContactSection } from './components/ContactSection';
-import { FloatingContactTray } from './components/FloatingContactTray';
 import { portfolioData } from './data/portfolioData';
 import './App.css';
 
@@ -71,24 +70,12 @@ function App() {
             subtitle="Things I've built — from ideas to live products."
           />
 
-          {/* Contact Section */}
+          {/* Contact Section + Footer */}
           <ContactSection
             email={portfolioData.contact.email}
+            socialLinks={portfolioData.contact.socialLinks}
           />
         </main>
-
-        {/* Floating Contact Tray - Always visible at bottom */}
-        <FloatingContactTray 
-          email={portfolioData.contact.email}
-          socialLinks={portfolioData.contact.socialLinks}
-        />
-
-        {/* Footer */}
-        <footer className="app-footer">
-          <div className="container">
-            <p>&copy; {new Date().getFullYear()} {portfolioData.hero.name}. All rights reserved.</p>
-          </div>
-        </footer>
       </div>
     </AnimationProvider>
   );
